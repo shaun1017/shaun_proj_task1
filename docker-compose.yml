@@ -1,0 +1,36 @@
+
+version: "3.9"
+services:
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    image:  proxy-nginx
+    ports:
+      - "80:80"
+    networks:
+      - "custom-network"
+
+  frontend:
+    build: ./frontend
+    container_name: react
+    image:  frontend-react
+    ports:
+      - "3000:3000"
+    networks:
+      - "custom-network"
+
+  backend:
+    build: ./backend
+    container_name: flask
+    image:  backend-flask
+    ports:
+      - "5000:5000"
+    networks:
+      - "custom-network"
+  
+networks:
+  custom-network: {}
+
+
+

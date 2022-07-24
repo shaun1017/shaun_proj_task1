@@ -1,1 +1,1 @@
-# shaun_proj
+# smartcow-proj
